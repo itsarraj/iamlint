@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "FullAdminAccess",
+      "Effect": "Allow",
+      "Action": "*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "DeleteProdBucketNoGuard",
+      "Effect": "Allow",
+      "Action": "s3:DeleteBucket",
+      "Resource": "arn:aws:s3:::prod-customer-data"
+    },
+    {
+      "Sid": "PublicBucketPolicy",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::internal-reports/*"
+    },
+    {
+      "Sid": "EverythingExceptDeny",
+      "Effect": "Allow",
+      "NotAction": "iam:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "ScopedIamStarNoCondition",
+      "Effect": "Allow",
+      "Action": "iam:*",
+      "Resource": "arn:aws:iam::123456789012:role/app-role"
+    }
+  ]
+}
