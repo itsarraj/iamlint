@@ -9,6 +9,12 @@ pasted into a PR) and says "this statement is a wildcard-action, wildcard-resour
 grant" before it ever gets applied. `iamlint` does exactly that, offline, against
 the JSON directly — no AWS account, no credentials, no API calls.
 
+## Installation
+
+```sh
+cargo install --path .
+```
+
 ## Usage
 
 ```bash
